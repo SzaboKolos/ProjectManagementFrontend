@@ -1,0 +1,4 @@
+D:\Resources\Fullstack\SpeclabHF\PMFrontend\ProjectManagementFrontend\ProjectManagementFrontend\obj\Debug\ProjectManagementFrontend.esproj.SuggestedBindingRedirects.cache
+D:\Resources\Fullstack\SpeclabHF\PMFrontend\ProjectManagementFrontend\ProjectManagementFrontend\obj\Debug\ProjectManagementFrontend.esproj.CoreCompileInputs.cache
+D:\Resources\Fullstack\SpeclabHF\PM\ProjectManagement\ProjectManagementFrontend\obj\Debug\ProjectManagementFrontend.esproj.SuggestedBindingRedirects.cache
+D:\Resources\Fullstack\SpeclabHF\PM\ProjectManagement\ProjectManagementFrontend\obj\Debug\ProjectManagementFrontend.esproj.CoreCompileInputs.cache

@@ -1,0 +1,29 @@
+<div class="container p-2 rounded whitetext container-bg col-xl-12">
+  <h2 class="mt-4 ms-5"><b>New Project</b></h2>
+  <form class="mt-1 p-5">
+    <div class="form-group mb-1">
+      <label for="ProjectName">Project Name</label>
+      <input id="ProjectName" type="text" maxlength="17" class="form-control" placeholder="Enter Name" [formControl]="projectName" required>
+    </div>
+    <div class="form-group mb-1">
+      <label for="projectDescription">Project Description</label>
+      <input id="projectDescription" type="text" maxlength="600" class="form-control" placeholder="Enter Description" [formControl]="projectDescription" >
+    </div>
+    <div class="form-group mb-1">
+      <label for="Date">Due Date</label>
+      <input id="Date" type="date" class="form-control slds" [formControl]="projectDueDate" required>
+    </div>
+    <div class="form-group mb-1">
+      <label for="Phase">Phase</label>
+        <select id="Phase" class="form-select mb-3" aria-label=".form-select-lg example" [formControl]="projectPhase">
+          <option *ngFor="let phase of phases" [value]="phase">{{phase}}</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+      <pm-sub-project-form [projectId]="id">
+      </pm-sub-project-form>
+    </div>
+    <button class="btn btn-dark align-top mb-2" routerLink="">Back</button>
+    <button type="submit" class="btn btn-bluey align-top mb-2" (click)="add()" routerLink="">Submit</button>
+  </form>
+</div>

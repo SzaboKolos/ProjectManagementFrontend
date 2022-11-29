@@ -1,0 +1,97 @@
+$pinky: rgba(255,104,227,1) !important;
+$bluey: rgba(66, 153, 225, 1) !important;
+
+.card {
+  transform: scale(1);
+  transition-duration: 300ms;
+  background-color: rgb(102, 102, 106);
+  border-color: $pinky;
+}
+.card:active {
+  transform: scale(0.95);
+}
+.card:hover{
+    transform: scale(1.05);
+    transition-duration: 100ms;
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    cursor: pointer;
+    background-color: rgb(130,130,134);
+    border-color: $bluey;
+}
+.nav{
+  background-color: rgb(122, 122, 126);
+}
+
+.cardtextbody{
+    max-width: 14rem;
+    height: 3rem;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+button {
+  background-color: rgb(231, 35, 231);
+  box-shadow: 0 3px 10px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+button:hover{
+  background-color:rgb(80, 173, 248);
+  text-shadow: 2px 2px rgba(0,0,0,.20);
+  box-shadow: 0 3px 10px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.subProjectNumberBadge {
+  z-index: 11;
+  white-space: nowrap;
+  height: 40px;
+  width: 40px; 
+  background-color: $bluey;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  position: absolute;
+
+}
+.projectPhaseBadge {
+  z-index: 10;
+  white-space: nowrap;
+  height: 25px;
+  min-width: fit-content;
+  width: 140px; 
+  border-radius: 20px;
+  text-align: right;
+  box-shadow: 0 3px 10px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  color: black;
+}
+.container-bg {
+  background-color: rgb(54, 54, 58);
+  height: fit-content;
+  min-height: 100%;
+}
+.pDefault{
+  background-color: rgb(80, 173, 248);
+}
+.p1{
+  background-color: #a9e100;
+}
+.p2{
+  background-color: #8674f4;
+}
+.p3{
+  background-color: #f4eb2b;
+}
+.p4{
+  background-color: #f89a04;
+}
+.p5{
+  background-color: #f888fd;
+}
+.p6{
+  background-color: #777671;
+  color: white;
+}
+.p7{
+  background-color: #fa4671;
+}
+

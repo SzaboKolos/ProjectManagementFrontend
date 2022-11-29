@@ -1,0 +1,26 @@
+<div class="container pt-5 col-xl-12 container-bg">
+   <!-- <button class="btn btn-dark" routerLink="../status">List View</button>   font-family: Roboto, Arial, sans-serif;  -->
+    <div class="row justify-content-center whitetext">
+        <div class="card m-3 shadow" style="width: 18rem;" *ngFor="let project of projects; let index = index;" [routerLink]="['../projects/details',index]">
+          <div class="card-body">
+            <h4 class="card-title"> <b>{{project.name}}</b></h4>
+            <!--  <img class="card-img-top"
+              
+              src={{element.image}} alt="" id="img"
+              alt="Image not found" onerror="this.src='./assets/PlaceholderPic.jpg'"> -->
+              <p class="cardtextbody">{{project.description}}</p>
+              <div class="row">
+                <div class="subProjectNumberBadge ">{{getSubProjects4Project(project.id).length}}</div>
+                <div class="projectPhaseBadge ms-2 mt-2 mb-1" [ngClass]="getColorByPhase(project.phase)" >{{phases[project.phase]}}</div>
+                <p class="text-end card-text">Due Date: <b>{{project.dueDate}}</b></p>
+              </div>
+              <td class="text-center"><button class="btn" [routerLink]="['../projects/edit',index]">Edit</button></td>
+          </div>
+        </div>
+            <div class="card m-3 shadow d-flex align-items-center justify-content-center" style="width: 18rem; height: 6.2rem; text-align: center" [routerLink]="['../create']">
+              <div class="card-body">
+                <h4 class="card-title"><b>Click to add new project</b></h4>    
+                </div>
+            </div>
+    </div>
+</div>

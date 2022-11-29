@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+$pinky: rgba(255,104,227,1);
+$bluey: rgba(66, 153, 225, 1);
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(66, 66, 70);
+}
+.whitetext {
+  color: white;
+}
+.border-pink {
+  border-color: pinky;
+}

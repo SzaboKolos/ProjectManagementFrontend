@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h5 class="mt-2 ms-2">Meetings and Tasks</h5>
+<div class="row ms-2 me-2 whitetext">
+    <div class="card subCardContainer align-items-center text-center ps-2 pe-1 m-1" 
+        *ngFor="let subProject of subProjects" #subCard (click)="editSub(subProject)">
+        <div class="card-body subCard mt-1 mb-1">
+            <b>{{subProject.name}}</b>
+            <button type="remove" class="btn btn-bluey align-end whitetext ms-2" (click)="removeSub(subCard, subProject)"><i
+                    class="fa fa-close"></i></button>
+        </div>
+    </div>
+</div>
+<div class="container mt-3 border rounded border-pink">
+    <h5 class="mt-2">Add Meetings and Tasks</h5>
+    <form>
+        <div class="form-group">
+
+            <label class="btn text-white" [ngClass]="{'type-button': subType.value === 'task'}" for="task">Task</label>
+            <input type="radio" name="options" id="task" [formControl]="subType" value="task" autocomplete="off" checked>
+            <label class="btn text-white" [ngClass]="{'type-button': subType.value === 'meeting'}"
+                for="meeting">Meeting</label>
+            <input type="radio" name="options" id="meeting" [formControl]="subType" value="meeting" autocomplete="off">
+
+            <br/>
+                                 <!-- Task -->
+            <div class="mb-3 mt-2" *ngIf="subType.value==='task'">
+                <div class="form-group mb-1">
+                    <label for="TaskName">Task Name</label>
+                    <input id="TaskName" type="text" class="form-control" [formControl]="subName" placeholder="Enter Name">
+                </div>
+                <div class="form-group mb-1">
+                    <label for="Description">Description</label>
+                    <input id="Description" type="text" class="form-control" [formControl]="subDescription" placeholder="Enter Description">
+                </div>
+                <div class="form-group mb-1">
+                    <label for="Assignee">Assignee</label>
+                    <select id="Assignee" class="form-select mb-3" aria-label=".form-select-lg example" [formControl]="subParticipants">
+                        <option selected [ngValue]="null">Select assignee</option>
+                        <option *ngFor="let user of userList" [ngValue]="user">{{user.displayName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Date">Due Date</label>
+                    <input id="Date" type="datetime-local" class="form-control" [formControl]="subDate">
+                </div>
+                <button type="submit" class="btn btn-bluey align-top mt-2" [disabled]="!isSubprojectValid"
+                (click)="addSub()">Add Task</button>
+            </div>
+                                 <!-- Meeting -->
+            <div class="mb-3 mt-2" *ngIf="subType.value!=='task'">
+                <div class="form-group mb-1">
+                    <label for="MeetingName">Meeting Name</label>
+                    <input id="MeetingName" type="text" class="form-control" [formControl]="subName" placeholder="Enter Name">
+                </div>
+                <div class="form-group mb-1">
+                    <label for="Description">Description</label>
+                    <input id="Description" type="text" class="form-control" [formControl]="subDescription" placeholder="Enter Description">
+                </div>
+                <div class="form-group mb-1">
+                    <label for="Participants">Participants</label>
+                    <select multiple id="Participants" class="form-select mb-3 ui fluid dropdown" [formControl]="subParticipants" aria-label="form-select-lg example">
+                        <option selected [ngValue]="null">Select participants</option>
+                        <option *ngFor="let user of userList" [ngValue]="user">{{user.displayName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Date">Date</label>
+                    <input id="Date" type="datetime" class="form-control" [formControl]="subDate">
+                </div>
+                <button type="submit" class="btn btn-bluey align-top mt-2" [disabled]="!isSubprojectValid"
+                (click)="addSub()">Add Meeting</button>
+            </div>
+        </div>
+    </form>
+</div>

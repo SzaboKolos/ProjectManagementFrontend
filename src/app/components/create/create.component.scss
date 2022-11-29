@@ -1,0 +1,46 @@
+
+$pinky: rgba(255,104,227,1) !important;
+$bluey: rgba(66, 153, 225, 1) !important;
+
+
+select,input {
+    background-color: #707070;
+    border-color: $pinky;
+    color: white;
+  }
+
+input:focus{
+    background-color: #8b8b8b;
+    border-color: $bluey;
+}
+select:focus {
+    background-color: #8b8b8b;
+    border-color: $bluey; 
+}
+input::after{
+    background-color: $bluey;
+    border-color: $bluey;
+}
+input::placeholder{
+    color: #cfcfcf;
+}
+.border-pink {
+  border-color: $pinky;
+}
+
+.btn-bluey {
+    background-color:rgb(80, 173, 248);
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, .20);
+}
+#datepicker input.form-control{
+    background-color: #707070 !important;
+}
+.slds-dropdown-trigger_click.slds-is-open button {
+    display: none;
+}
+.container-bg {
+    background-color: rgb(54, 54, 58);
+}
+
+  
